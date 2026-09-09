@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="SORTED" property="og:title">
+    <meta content="Pour it. Plan it. Sort it." property="og:description">
+    <meta content="https://itsmike613.github.io/sorted/" property="og:url">
+    <meta content="https://github.com/itsmike613/sorted/blob/main/Source/Images/logo.png?raw=true" property="og:image">
+    <meta content="#65458F" data-react-helmet="true" name="theme-color">
+
+    <!-- Tab -->
+    <link rel="icon" type="image/x-icon" href="Source/Images/logo.png">
+    <title>SORTED</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Source/Styles/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+</head>
+
+<body>
+    <header class="bar">
+        <button class="brand" data-go="home" aria-label="Home">
+            <img src="Source/Images/logo.png" alt="">
+            <span data-title></span>
+        </button>
+        <div class="tools">
+            <button class="tool" id="theme" aria-label="Theme"><i class="ph ph-sun"></i><span>LM</span></button>
+            <button class="tool" id="lang" aria-label="Language"><i class="ph ph-globe"></i><span>EN</span></button>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="page active" id="home">
+            <div class="hero">
+                <img class="mark" src="Source/Images/logo.png" alt="">
+                <h1 data-logo></h1>
+                <p data-t="tagline"></p>
+                <div class="stack">
+                    <button class="primary" data-go="setup" data-t="play"></button>
+                    <button data-go="settings" data-t="settings"></button>
+                    <button data-go="help" data-t="help"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="setup">
+            <div class="head">
+                <div>
+                    <p class="eyebrow" data-t="newround"></p>
+                    <h2 data-t="setup"></h2>
+                </div>
+                <button class="icon" data-go="home" aria-label="Home"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="panel" id="options"></div>
+            <div class="sum"><span data-t="total"></span><strong id="total">8</strong></div>
+            <div class="actions"><button data-go="home" data-t="back"></button><button class="primary" id="start" data-t="start"></button></div>
+        </section>
+
+        <section class="page" id="play">
+            <div class="head">
+                <div>
+                    <p class="eyebrow" data-t="playing"></p>
+                    <h2 data-title></h2>
+                </div>
+                <button class="icon" id="quit" aria-label="Home"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="stats">
+                <div class="stat"><span data-t="time"></span><strong id="time">00:00.000</strong></div>
+                <div class="stat"><span data-t="moves"></span><strong id="moves">0</strong></div>
+            </div>
+            <div class="board" id="board" role="group" aria-label="Puzzle board"></div>
+            <div class="gameactions">
+                <button id="undo" data-t="undo" disabled></button>
+                <button id="redo" data-t="redo" disabled></button>
+                <button id="restart" data-t="restart"></button>
+                <button id="new" data-t="new"></button>
+            </div>
+        </section>
+
+        <section class="page" id="results">
+            <div class="head">
+                <div>
+                    <p class="eyebrow" data-t="complete"></p>
+                    <h2 data-t="results"></h2>
+                </div>
+            </div>
+            <div class="results" id="scores"></div>
+            <div class="actions"><button id="replay" data-t="replay"></button><button class="primary" data-go="setup" data-t="setup"></button></div>
+        </section>
+
+        <section class="page" id="settings">
+            <div class="head">
+                <div>
+                    <p class="eyebrow" data-t="preferences"></p>
+                    <h2 data-t="settings"></h2>
+                </div><button class="icon" data-go="home" aria-label="Home"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="panel settings">
+                <label class="setting"><span><b data-t="palette"></b><small data-t="palettehelp"></small></span><select id="palette"></select></label>
+                <label class="setting"><span><b data-t="style"></b><small data-t="stylehelp"></small></span><select id="style"></select></label>
+            </div>
+        </section>
+
+        <section class="page" id="help">
+            <div class="head">
+                <div>
+                    <p class="eyebrow" data-t="guide"></p>
+                    <h2 data-t="help"></h2>
+                </div><button class="icon" data-go="home" aria-label="Home"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="help" id="helpcopy"></div>
+        </section>
+    </main>
+
+    <!-- Body Scripts -->
+    <script src="Source/Data/index.js"></script>
+    <script src="Source/Scripts/index.js"></script>
+</body>
+
+</html>
